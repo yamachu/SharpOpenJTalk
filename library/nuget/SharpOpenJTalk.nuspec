@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SharpOpenJTalk</id>
+    <version>1.0.0</version>
+    <authors>yamachu</authors>
+    <owners>yamachu</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# wrapper for OpenJTalk</description>
+    <projectUrl>https://github.com/yamachu/SharpOpenJTalk</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/yamachu/SharpOpenJTalk/master/LICENSE</licenseUrl>
+    <dependencies>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="System.IO.FileSystem" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\ref\bin\Release\**" target="ref" exclude="**\*.deps.json" />
+    <file src="..\src\bin\Linux_Release\**" target="runtimes\linux\lib" exclude="**\*.deps.json" />
+    <file src="..\src\bin\OSX_Release\**" target="runtimes\osx\lib" exclude="**\*.deps.json" />
+    <file src="..\src\bin\Windows_Release\**" target="runtimes\win-x86\lib" exclude="**\*.deps.json" />
+    <file src="..\src\bin\Windows_Release\**" target="runtimes\win-x64\lib" exclude="**\*.deps.json" />
+
+    <file src="..\resources/linux/libopenjtalk.so" target="runtimes/linux/native/libopenjtalk.so" />
+    <file src="..\resources/osx/libopenjtalk.dylib" target="runtimes/osx/native/libopenjtalk.dylib" />
+    <file src="..\resources/win-x86/openjtalk.dll" target="runtimes/win-x86/native/openjtalk.dll" />
+    <file src="..\resources/win-x64/openjtalk.dll" target="runtimes/win-x64/native/openjtalk.dll" />
+    
+    <file src="..\..\LICENSE" target="Content" />
+  </files>
+</package>
