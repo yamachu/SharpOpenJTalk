@@ -24,7 +24,6 @@ namespace SharpOpenJTalk
             var loadSuccess = Core.OpenJTalkLoad(Instance, dictPath, hmmModelPath);
             if (!loadSuccess)
             {
-                Core.OpenJTalkClear(Instance);
                 Instance = IntPtr.Zero;
             }
 
