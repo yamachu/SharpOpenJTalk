@@ -11,7 +11,7 @@ namespace SharpOpenJTalk
         private IntPtr Instance = IntPtr.Zero;
 
         public List<List<string>> Labels { get; private set; } = new List<List<string>>();
-        public List<float> WavBuffer { get; private set; } = new List<float>();
+        public List<byte> WavBuffer { get; private set; } = new List<byte>();
 
         ~OpenJTalkAPI()
         {
@@ -72,7 +72,7 @@ namespace SharpOpenJTalk
 
             if (synthesisSuccess)
             {
-                this.ReadWavRaw(wavPath);
+                this.ReadWav(wavPath);
             }
 
             File.Delete(wavPath);
@@ -107,17 +107,11 @@ namespace SharpOpenJTalk
             this.Labels.Add(tmp);
         }
 
-        private void ReadWavRaw(string wavFilePath)
+        private void ReadWav(string wavFilePath)
         {
             using (var reader = new BinaryReader(new FileStream(wavFilePath, FileMode.Open)))
             {
-                // Supports 44-bytes header only
-                reader.ReadBytes(44);
-                while (reader.BaseStream.Position != reader.BaseStream.Length)
-                {
-                    // 16bit wav only
-                    this.WavBuffer.Add((float)reader.ReadInt16() / 32768.0f);
-                }
+                this.WavBuffer.AddRange(reader.ReadBytes((int)reader.BaseStream.Length));
             }
         }
     }

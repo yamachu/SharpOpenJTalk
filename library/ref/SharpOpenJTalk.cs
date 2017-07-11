@@ -7,7 +7,7 @@ namespace SharpOpenJTalk
     public class OpenJTalkAPI: IDisposable
     {
         public List<List<string>> Labels { get; private set; }
-        public List<float> WavBuffer { get; private set; }
+        public List<byte> WavBuffer { get; private set; }
 
         ~OpenJTalkAPI() {}
 
