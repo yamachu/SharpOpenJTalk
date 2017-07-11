@@ -1,6 +1,8 @@
-$latestInfo = Invoke-WebRequest https://api.github.com/repos/yamachu/LibOpenJTalk/releases/latest -Headers @{"Accept"="application/json"}
-$json = $latestInfo.Content | ConvertFrom-Json
-$latestVersion = $json.tag_name
+$latestInfo = Invoke-WebRequest -Uri https://github.com/yamachu/LibOpenJTalk/releases/latest -MaximumRedirection 0  -ErrorAction SilentlyContinue
+$Location = $latestInfo.Headers.Location
+$Location -match ".*/tag/(?<tagName>.*?)$"
+$latestVersion = $Matches.tagName
+"$latestVersion"
 $baseUrl = "https://github.com/yamachu/LibOpenJTalk/releases/download/$latestVersion"
 
 Invoke-WebRequest "$baseUrl/libopenjtalk.dylib" -OutFile library\resources\osx\libopenjtalk.dylib
