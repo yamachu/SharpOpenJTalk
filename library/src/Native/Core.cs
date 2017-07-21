@@ -26,5 +26,41 @@ namespace SharpOpenJTalk.Native
             string outputContextLabelPath)
             => CoreDefinitions.Open_JTalk_synthesis_labels(instance,
                 text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
+
+        public static void OpenJTalkSetSamplingFrequency(IntPtr instance,
+            IntPtr i)
+            => CoreDefinitions.Open_JTalk_set_sampling_frequency(instance, i);
+
+        public static void OpenJTalkSetFramePeriod(IntPtr instance,
+            IntPtr i)
+            => CoreDefinitions.Open_JTalk_set_fperiod(instance, i);
+
+        public static void OpenJTalkSetAlpha(IntPtr instance,
+            double f)
+            => CoreDefinitions.Open_JTalk_set_alpha(instance, f);
+
+        public static void OpenJTalkSetBeta(IntPtr instance,
+            double f)
+            => CoreDefinitions.Open_JTalk_set_beta(instance, f);
+
+        public static void OpenJTalkSetSpeed(IntPtr instance,
+            double f)
+            => CoreDefinitions.Open_JTalk_set_speed(instance, f);
+
+        public static void OpenJTalkSetHalfTone(IntPtr instance,
+            double f)
+            => CoreDefinitions.Open_JTalk_add_half_tone(instance, f);
+
+        public static void OpenJTalkSetMSDThreshold(IntPtr instance,
+            IntPtr i, double f)
+            => CoreDefinitions.Open_JTalk_set_msd_threshold(instance, i, f);
+
+        public static void OpenJTalkSetGVWeight(IntPtr instance,
+            IntPtr i, double f)
+            => CoreDefinitions.Open_JTalk_set_gv_weight(instance, i, f);
+
+        public static void OpenJTalkSetVolume(IntPtr instance,
+            double f)
+            => CoreDefinitions.Open_JTalk_set_volume(instance, f);
     }
 }

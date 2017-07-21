@@ -9,9 +9,179 @@ namespace SharpOpenJTalk
     public class OpenJTalkAPI: IDisposable
     {
         private IntPtr Instance = IntPtr.Zero;
+        private uint samplingFrequency;
+        private uint fperiod;
+        private double alpha;
+        private double beta;
+        private double speed;
+        private double halfTone;
+        private double msdThreshold;
+        private double gvWeightSpectrum;
+        private double gvWeightLF0;
+        private double volume;
 
         public List<List<string>> Labels { get; private set; } = new List<List<string>>();
         public List<byte> WavBuffer { get; private set; } = new List<byte>();
+
+        public uint SamplingFrequency {
+            get { return samplingFrequency; }
+            set {
+                samplingFrequency = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                if (value >= 1)
+                {
+                    Core.OpenJTalkSetSamplingFrequency(Instance, new IntPtr(samplingFrequency));
+                }
+            }
+        }
+
+        public uint FramePeriod {
+            get { return fperiod; }
+            set {
+                fperiod = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                if (value >= 1)
+                {
+                    Core.OpenJTalkSetFramePeriod(Instance, new IntPtr(fperiod));
+                }
+            }
+        }
+
+        public double Alpha {
+            get { return alpha; }
+            set {
+                alpha = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                if (value >= 0.0 && value <= 1.0)
+                {
+                    Core.OpenJTalkSetAlpha(Instance, alpha);
+                }
+            }
+        }
+
+        public double Beta {
+            get { return beta; }
+            set {
+                beta = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                if (value >= 0.0 && value <= 1.0)
+                {
+                    Core.OpenJTalkSetBeta(Instance, beta);
+                }
+            }
+        }
+
+        public double Speed {
+            get { return speed; }
+            set {
+                speed = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                if (value >= 0.0)
+                {
+                    Core.OpenJTalkSetSpeed(Instance, speed);
+                }
+            }
+        }
+
+        public double HarfTone {
+            get { return halfTone; }
+            set {
+                halfTone = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                Core.OpenJTalkSetHalfTone(Instance, halfTone);
+            }
+        }
+        public double MSDThreshold {
+            get { return msdThreshold; }
+            set {
+                msdThreshold = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                if (value >= 0.0 && value <= 1.0)
+                {
+                    Core.OpenJTalkSetMSDThreshold(Instance, new IntPtr(1), msdThreshold);
+                }
+            }
+        }
+        public double GVWeightSpectrum {
+            get { return gvWeightSpectrum; }
+            set {
+                gvWeightSpectrum = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                if (value >= 0.0)
+                {
+                    Core.OpenJTalkSetGVWeight(Instance, new IntPtr(0), gvWeightSpectrum);
+                }
+            }
+        }
+        public double GVWeightLF0 {
+            get { return gvWeightLF0; }
+            set {
+                gvWeightLF0 = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                if (value >= 0.0)
+                {
+                    Core.OpenJTalkSetGVWeight(Instance, new IntPtr(1), gvWeightLF0);
+                }
+            }
+        }
+        public double Volume {
+            get { return volume; }
+            set {
+                volume = value;
+
+                if (Instance == IntPtr.Zero)
+                {
+                    throw new Exception("Instance is not initialized");
+                }
+
+                Core.OpenJTalkSetVolume(Instance, volume);
+            }
+        }
 
         ~OpenJTalkAPI()
         {

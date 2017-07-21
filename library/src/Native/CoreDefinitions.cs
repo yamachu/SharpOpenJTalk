@@ -33,6 +33,35 @@ namespace SharpOpenJTalk.Native
                 string text, string outputAudioPath,
                 string outputTextAnalysisPath,
                 string outputContextLabelPath);
-        #endregion
+#endregion
+
+#region Parameters
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_sampling_frequency(IntPtr openJTalkInstance, IntPtr i);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_fperiod(IntPtr openJTalkInstance, IntPtr i);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_alpha(IntPtr openJTalkInstance, double f);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_beta(IntPtr openJTalkInstance, double f);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_speed(IntPtr openJTalkInstance, double f);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_add_half_tone(IntPtr openJTalkInstance, double f);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_msd_threshold(IntPtr openJTalkInstance, IntPtr i, double f);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_gv_weight(IntPtr openJTalkInstance, IntPtr i, double f);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_volume(IntPtr openJTalkInstance, double f);
+#endregion
     }
 }
