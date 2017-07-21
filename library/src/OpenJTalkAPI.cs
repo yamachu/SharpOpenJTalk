@@ -200,7 +200,7 @@ namespace SharpOpenJTalk
             return loadSuccess;
         }
 
-        public bool Synthesis(string text, bool dumpAll = true)
+        public bool Synthesis(string text, bool dumpAll = true, bool useWorld = false)
         {
             this.WavBuffer.Clear();
             this.Labels.Clear();
@@ -217,7 +217,14 @@ namespace SharpOpenJTalk
             if (dumpAll)
             {
                 var labelPath = Path.GetTempFileName();
-                synthesisSuccess = Core.OpenJTalkSynthesis(Instance, text, wavPath, labelPath);
+                try {
+                    synthesisSuccess = useWorld ? Core.OpenJTalkSynthesisWORLD(Instance, text, wavPath, labelPath)
+                                                : Core.OpenJTalkSynthesis(Instance, text, wavPath, labelPath);
+                } catch (Exception ex) {
+                    Console.Error.WriteLine(ex.StackTrace);
+                    synthesisSuccess = false;
+                }
+
                 if (synthesisSuccess)
                 {
                     this.ReadLabel(labelPath);
@@ -229,7 +236,14 @@ namespace SharpOpenJTalk
             {
                 var textAnalysisPath = Path.GetTempFileName();
                 var contextLabelPath = Path.GetTempFileName();
-                synthesisSuccess = Core.OpenJTalkSynthesisLabels(Instance, text, wavPath, textAnalysisPath, contextLabelPath);
+                try {
+                    synthesisSuccess = useWorld ?  Core.OpenJTalkSynthesisLabelsWORLD(Instance, text, wavPath, textAnalysisPath, contextLabelPath)
+                                                :  Core.OpenJTalkSynthesisLabels(Instance, text, wavPath, textAnalysisPath, contextLabelPath);
+                } catch (Exception ex) {
+                    Console.Error.WriteLine(ex.StackTrace);
+                    synthesisSuccess = false;
+                }
+
                 if (synthesisSuccess)
                 {
                     this.ReadLabel(textAnalysisPath);

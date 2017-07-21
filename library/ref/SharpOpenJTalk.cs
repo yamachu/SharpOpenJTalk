@@ -26,7 +26,7 @@ namespace SharpOpenJTalk
           throw null;
         }
 
-        public bool Synthesis(string text, bool dumpAll = true)
+        public bool Synthesis(string text, bool dumpAll = true, bool useWorld = false)
         {
             throw null;
         }

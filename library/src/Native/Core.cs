@@ -20,7 +20,19 @@ namespace SharpOpenJTalk.Native
             => CoreDefinitions.Open_JTalk_synthesis(instance,
                 text, outputAudioPath, outputLabelPath) == 1;
 
+        public static bool OpenJTalkSynthesisWORLD(IntPtr instance,
+            string text, string outputAudioPath, string outputLabelPath)
+            => CoreDefinitions.Open_JTalk_synthesis_WORLD(instance,
+                text, outputAudioPath, outputLabelPath) == 1;
+
         public static bool OpenJTalkSynthesisLabels(IntPtr instance,
+            string text, string outputAudioPath,
+            string outputTextAnalysisPath,
+            string outputContextLabelPath)
+            => CoreDefinitions.Open_JTalk_synthesis_labels(instance,
+                text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
+
+        public static bool OpenJTalkSynthesisLabelsWORLD(IntPtr instance,
             string text, string outputAudioPath,
             string outputTextAnalysisPath,
             string outputContextLabelPath)

@@ -29,7 +29,17 @@ namespace SharpOpenJTalk.Native
                 string text, string outputAudioPath, string outputLabelPath);
 
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_synthesis_WORLD(IntPtr openJTalkInstance,
+                string text, string outputAudioPath, string outputLabelPath);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern int Open_JTalk_synthesis_labels(IntPtr openJTalkInstance,
+                string text, string outputAudioPath,
+                string outputTextAnalysisPath,
+                string outputContextLabelPath);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_synthesis_labels_WORLD(IntPtr openJTalkInstance,
                 string text, string outputAudioPath,
                 string outputTextAnalysisPath,
                 string outputContextLabelPath);
