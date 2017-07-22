@@ -36,7 +36,7 @@ namespace SharpOpenJTalk.Native
             string text, string outputAudioPath,
             string outputTextAnalysisPath,
             string outputContextLabelPath)
-            => CoreDefinitions.Open_JTalk_synthesis_labels(instance,
+            => CoreDefinitions.Open_JTalk_synthesis_labels_WORLD(instance,
                 text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
 
         public static void OpenJTalkSetSamplingFrequency(IntPtr instance,
