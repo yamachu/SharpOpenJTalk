@@ -43,6 +43,12 @@ namespace SharpOpenJTalk.Native
                 string text, string outputAudioPath,
                 string outputTextAnalysisPath,
                 string outputContextLabelPath);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_resynthesis(IntPtr openJTalkInstance, string outputAudioPath);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_resynthesis_WORLD(IntPtr openJTalkInstance, string outputAudioPath);
 #endregion
 
 #region Parameters
@@ -72,6 +78,19 @@ namespace SharpOpenJTalk.Native
 
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern void Open_JTalk_set_volume(IntPtr openJTalkInstance, double f);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_lf0(IntPtr openJTalkInstance, double lf0, IntPtr frame_index);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_set_lf0_array(IntPtr openJTalkInstance, [In][MarshalAs(UnmanagedType.LPArray, SizeParamIndex=2)] double[] lf0, int buffer_length);
+
+        
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_get_lf0_length(IntPtr openJTalkInstance);
+        
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Open_JTalk_get_lf0_array(IntPtr openJTalkInstance, [In][Out] IntPtr lf0_buffer, IntPtr buffer_length);
 #endregion
     }
 }

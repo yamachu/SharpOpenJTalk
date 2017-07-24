@@ -39,6 +39,14 @@ namespace SharpOpenJTalk.Native
             => CoreDefinitions.Open_JTalk_synthesis_labels_WORLD(instance,
                 text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
 
+        public static bool OpenJTalkReSynthesis(IntPtr instance,
+            string outputAudioPath)
+            => CoreDefinitions.Open_JTalk_resynthesis(instance, outputAudioPath) == 1;
+
+        public static bool OpenJTalkReSynthesisWORLD(IntPtr instance,
+            string outputAudioPath)
+            => CoreDefinitions.Open_JTalk_resynthesis_WORLD(instance, outputAudioPath) == 1;
+
         public static void OpenJTalkSetSamplingFrequency(IntPtr instance,
             IntPtr i)
             => CoreDefinitions.Open_JTalk_set_sampling_frequency(instance, i);
@@ -74,5 +82,20 @@ namespace SharpOpenJTalk.Native
         public static void OpenJTalkSetVolume(IntPtr instance,
             double f)
             => CoreDefinitions.Open_JTalk_set_volume(instance, f);
+
+        public static void OpenJTalkSetLF0(IntPtr instance,
+            double f, IntPtr i)
+            => CoreDefinitions.Open_JTalk_set_lf0(instance, f, i);
+
+        public static void OpenJTalkSetLF0Array(IntPtr instance,
+            double[] lf0, int buffer_length)
+            => CoreDefinitions.Open_JTalk_set_lf0_array(instance, lf0, buffer_length);
+
+        public static int OpenJTalkGetLF0Length(IntPtr instance)
+            => CoreDefinitions.Open_JTalk_get_lf0_length(instance);
+
+        public static void OpenJTalkGetLF0Array(IntPtr instance,
+            IntPtr lf0_buffer, IntPtr buffer_length)
+            => CoreDefinitions.Open_JTalk_get_lf0_array(instance, lf0_buffer, buffer_length);
     }
 }

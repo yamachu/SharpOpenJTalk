@@ -264,6 +264,62 @@ namespace SharpOpenJTalk
             return synthesisSuccess;
         }
 
+        public bool ReSynthesis(bool useWorld = false)
+        {
+            this.WavBuffer.Clear();
+
+            if (Instance == IntPtr.Zero)
+            {
+                return false;
+            }
+
+            var synthesisSuccess = false;
+
+            var wavPath = Path.GetTempFileName();
+
+            try {
+                synthesisSuccess = useWorld ? Core.OpenJTalkReSynthesisWORLD(Instance, wavPath)
+                                            : Core.OpenJTalkReSynthesis(Instance, wavPath);
+            } catch (Exception ex) {
+                Console.Error.WriteLine(ex.StackTrace);
+                synthesisSuccess = false;
+            }
+
+            if (synthesisSuccess)
+            {
+                this.ReadWav(wavPath);
+            }
+
+            File.Delete(wavPath);
+
+            return synthesisSuccess;
+        }
+
+        public double[] GetLF0Array()
+        {
+            var lf0Length = Core.OpenJTalkGetLF0Length(Instance);
+            var lf0 = new double[lf0Length];
+
+            IntPtr ptr_lf0 = Marshal.AllocHGlobal(Marshal.SizeOf<double>() * lf0Length);
+            Core.OpenJTalkGetLF0Array(Instance, ptr_lf0, new IntPtr(lf0Length));
+
+            Marshal.Copy(ptr_lf0, lf0, 0, lf0Length);
+
+            Marshal.FreeHGlobal(ptr_lf0);
+
+            return lf0;
+        }
+
+        public void SetLF0Array(double [] lf0)
+        {
+            Core.OpenJTalkSetLF0Array(Instance, lf0, lf0.Length);
+        }
+
+        public void SetLF0(double lf0, int index)
+        {
+            Core.OpenJTalkSetLF0(Instance, lf0, new IntPtr(index));
+        }
+
         public void Clear()
         {
             if (Instance != IntPtr.Zero)

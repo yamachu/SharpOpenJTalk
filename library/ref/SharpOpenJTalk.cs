@@ -31,6 +31,20 @@ namespace SharpOpenJTalk
             throw null;
         }
 
+        public bool ReSynthesis(bool useWorld = false)
+        {
+            throw null;
+        }
+
+        public double[] GetLF0Array()
+        {
+            throw null;
+        }
+
+        public void SetLF0Array(double[] lf0) { }
+
+        public void SetLF0(double lf0, int index) { }
+
         public void Clear() { }
 
         public void Dispose() { }
