@@ -10,7 +10,7 @@ namespace SharpOpenJTalk.Native
 #elif __Linux
         private const string DllName = "libopenjtalk.so";
 #elif __Win
-        private const string DllName = "openjtalk.dll";
+        private const string DllName = "open_jtalk.dll";
 #endif
 
 #region Instance
