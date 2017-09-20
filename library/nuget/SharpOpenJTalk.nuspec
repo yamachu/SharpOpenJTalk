@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SharpOpenJTalk</id>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <authors>yamachu</authors>
     <owners>yamachu</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,11 +20,13 @@
     <file src="..\ref\bin\Release\**" target="ref" exclude="**\*.deps.json" />
     <file src="..\src\bin\Linux_Release\**" target="runtimes\linux\lib" exclude="**\*.deps.json" />
     <file src="..\src\bin\OSX_Release\**" target="runtimes\osx\lib" exclude="**\*.deps.json" />
-    <file src="..\src\bin\Windows_Release\**" target="runtimes\win\lib" exclude="**\*.deps.json" />
+    <file src="..\src\bin\Windows_Release\**" target="runtimes\win-x86\lib" exclude="**\*.deps.json" />
+    <file src="..\src\bin\Windows_Release\**" target="runtimes\win-x64\lib" exclude="**\*.deps.json" />
 
     <file src="..\resources/linux/libopenjtalk.so" target="runtimes/linux/native/libopenjtalk.so" />
     <file src="..\resources/osx/libopenjtalk.dylib" target="runtimes/osx/native/libopenjtalk.dylib" />
-    <file src="..\resources/win/open_jtalk.dll" target="runtimes/win/native/open_jtalk.dll" />
+    <file src="..\resources/win-x86/open_jtalk.dll" target="runtimes/win-x86/native/open_jtalk.dll" />
+    <file src="..\resources/win-x64/open_jtalk.dll" target="runtimes/win-x64/native/open_jtalk.dll" />
     
     <file src="..\..\LICENSE" target="Content" />
   </files>
