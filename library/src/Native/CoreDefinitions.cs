@@ -20,34 +20,34 @@ namespace SharpOpenJTalk.Native
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern void Open_JTalk_clear(ref IntPtr openJTalkInstance);
 
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_load(IntPtr openJTalkInstance,
                 string dictPath, string hmmModelPath);
 
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_synthesis(IntPtr openJTalkInstance,
                 string text, string outputAudioPath, string outputLabelPath);
 
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_synthesis_WORLD(IntPtr openJTalkInstance,
                 string text, string outputAudioPath, string outputLabelPath);
 
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_synthesis_labels(IntPtr openJTalkInstance,
                 string text, string outputAudioPath,
                 string outputTextAnalysisPath,
                 string outputContextLabelPath);
 
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_synthesis_labels_WORLD(IntPtr openJTalkInstance,
                 string text, string outputAudioPath,
                 string outputTextAnalysisPath,
                 string outputContextLabelPath);
 
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_resynthesis(IntPtr openJTalkInstance, string outputAudioPath);
 
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_resynthesis_WORLD(IntPtr openJTalkInstance, string outputAudioPath);
 #endregion
 
