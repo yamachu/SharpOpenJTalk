@@ -5,13 +5,7 @@ namespace SharpOpenJTalk.Native
 {
     internal class CoreDefinitions
     {
-#if __OSX
-        private const string DllName = "libopenjtalk.dylib";
-#elif __Linux
-        private const string DllName = "libopenjtalk.so";
-#elif __Win
-        private const string DllName = "open_jtalk.dll";
-#endif
+        private const string DllName = "openjtalk.dll";
 
 #region Instance
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]

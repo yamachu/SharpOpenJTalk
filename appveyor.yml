@@ -5,9 +5,7 @@ before_build:
   - ps: . .\download_resources.ps1
 build_script:
   - dotnet build library/ref -c Release
-  - dotnet build library/src -c OSX_Release
-  - dotnet build library/src -c Linux_Release
-  - dotnet build library/src -c Windows_Release
+  - dotnet build library/src -c Release
 
 after_build:
   - nuget pack library/nuget/SharpOpenJTalk.nuspec
