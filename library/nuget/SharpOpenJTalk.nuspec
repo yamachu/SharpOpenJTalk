@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SharpOpenJTalk</id>
-    <version>1.1.3</version>
+    <version>1.1.4</version>
     <authors>yamachu</authors>
     <owners>yamachu</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -17,7 +17,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\src\bin\Release\netstandard1.3\**" target="lib/netstandatd1.3" exclude="**\*.deps.json" />
+    <file src="..\src\bin\Release\netstandard1.3\SharpOpenJTalk.*" target="lib/netstandard1.3" exclude="**\*.deps.json" />
 
     <file src="..\resources/linux/libopenjtalk.so" target="runtimes/linux/native/libopenjtalk.so" />
     <file src="..\resources/osx/libopenjtalk.dylib" target="runtimes/osx/native/libopenjtalk.dylib" />
