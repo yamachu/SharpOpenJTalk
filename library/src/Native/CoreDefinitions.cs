@@ -5,7 +5,7 @@ namespace SharpOpenJTalk.Native
 {
     internal class CoreDefinitions
     {
-        private const string DllName = "openjtalk.dll";
+        private const string DllName = "openjtalk";
 
 #region Instance
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
@@ -19,8 +19,20 @@ namespace SharpOpenJTalk.Native
                 string dictPath, string hmmModelPath);
 
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_destroy_buffer(IntPtr openJTalkInstance,
+                ref IntPtr buffer);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_synthesis_buffer(IntPtr openJTalkInstance,
+                string text, out IntPtr buffer);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern int Open_JTalk_synthesis(IntPtr openJTalkInstance,
                 string text, string outputAudioPath, string outputLabelPath);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_synthesis_buffer_WORLD(IntPtr openJTalkInstance,
+                string text, out IntPtr buffer);
 
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern int Open_JTalk_synthesis_WORLD(IntPtr openJTalkInstance,
@@ -37,6 +49,12 @@ namespace SharpOpenJTalk.Native
                 string text, string outputAudioPath,
                 string outputTextAnalysisPath,
                 string outputContextLabelPath);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_resynthesis_buffer(IntPtr openJTalkInstance, out IntPtr buffer);
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
+        public static extern int Open_JTalk_resynthesis_buffer_WORLD(IntPtr openJTalkInstance, out IntPtr buffer);
 
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern int Open_JTalk_resynthesis(IntPtr openJTalkInstance, string outputAudioPath);

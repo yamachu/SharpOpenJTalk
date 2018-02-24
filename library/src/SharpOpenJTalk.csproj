@@ -10,4 +10,18 @@
   <ItemGroup>
     <Sources Include="**/*.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\resources\osx\libopenjtalk.dylib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\resources\linux\libopenjtalk.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\resources\win-x64\openjtalk.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\resources\win-x86\openjtalk.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

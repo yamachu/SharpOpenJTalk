@@ -264,6 +264,36 @@ namespace SharpOpenJTalk
             return synthesisSuccess;
         }
 
+        public short[] SynthesisBuffer(string text, bool useWorld = false)
+        {
+            if (Instance == IntPtr.Zero)
+            {
+                return null;
+            }
+
+            int buffer_size;
+            short[] buffer;
+
+            try {
+                IntPtr buffer_ptr;
+                buffer_size = useWorld ? 
+                Core.OpenJTalkSynthesisBufferWORLD(Instance, text, out buffer_ptr):
+                Core.OpenJTalkSynthesisBuffer(Instance, text, out buffer_ptr);
+
+                if (buffer_size == 0) return null;
+
+                buffer = new short[buffer_size];
+                Marshal.Copy(buffer_ptr, buffer, 0, buffer_size);
+
+                Core.OpenJTalkDestroyBuffer(Instance, ref buffer_ptr);
+            } catch (Exception ex) {
+                Console.Error.WriteLine(ex.StackTrace);
+                return null;
+            }
+
+            return buffer;
+        }
+
         public bool ReSynthesis(bool useWorld = false)
         {
             this.WavBuffer.Clear();
@@ -293,6 +323,36 @@ namespace SharpOpenJTalk
             File.Delete(wavPath);
 
             return synthesisSuccess;
+        }
+
+        public short[] ReSynthesisBuffer(bool useWorld = false)
+        {
+            if (Instance == IntPtr.Zero)
+            {
+                return null;
+            }
+
+            int buffer_size;
+            short[] buffer;
+
+            try {
+                IntPtr buffer_ptr;
+                buffer_size = useWorld ? 
+                Core.OpenJTalkReSynthesisBufferWORLD(Instance, out buffer_ptr):
+                Core.OpenJTalkReSynthesisBuffer(Instance, out buffer_ptr);
+
+                if (buffer_size == 0) return null;
+
+                buffer = new short[buffer_size];
+                Marshal.Copy(buffer_ptr, buffer, 0, buffer_size);
+
+                Core.OpenJTalkDestroyBuffer(Instance, ref buffer_ptr);
+            } catch (Exception ex) {
+                Console.Error.WriteLine(ex.StackTrace);
+                return null;
+            }
+
+            return buffer;
         }
 
         public double[] GetLF0Array()

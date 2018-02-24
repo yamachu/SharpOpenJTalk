@@ -15,10 +15,19 @@ namespace SharpOpenJTalk.Native
             string dictPath, string hmmModelPath)
             => CoreDefinitions.Open_JTalk_load(instance, dictPath, hmmModelPath) == 1;
 
+        public static void OpenJTalkDestroyBuffer(IntPtr instance, ref IntPtr buffer)
+            => CoreDefinitions.Open_JTalk_destroy_buffer(instance, ref buffer);
+
+        public static int OpenJTalkSynthesisBuffer(IntPtr instance, string text, out IntPtr buffer)
+            => CoreDefinitions.Open_JTalk_synthesis_buffer(instance, text, out buffer);
+
         public static bool OpenJTalkSynthesis(IntPtr instance,
             string text, string outputAudioPath, string outputLabelPath)
             => CoreDefinitions.Open_JTalk_synthesis(instance,
                 text, outputAudioPath, outputLabelPath) == 1;
+
+        public static int OpenJTalkSynthesisBufferWORLD(IntPtr instance, string text, out IntPtr buffer)
+            => CoreDefinitions.Open_JTalk_synthesis_buffer_WORLD(instance, text, out buffer);
 
         public static bool OpenJTalkSynthesisWORLD(IntPtr instance,
             string text, string outputAudioPath, string outputLabelPath)
@@ -38,6 +47,14 @@ namespace SharpOpenJTalk.Native
             string outputContextLabelPath)
             => CoreDefinitions.Open_JTalk_synthesis_labels_WORLD(instance,
                 text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
+
+        public static int OpenJTalkReSynthesisBuffer(IntPtr instance,
+            out IntPtr buffer)
+            => CoreDefinitions.Open_JTalk_resynthesis_buffer(instance, out buffer);
+
+        public static int OpenJTalkReSynthesisBufferWORLD(IntPtr instance,
+            out IntPtr buffer)
+            => CoreDefinitions.Open_JTalk_resynthesis_buffer_WORLD(instance, out buffer);
 
         public static bool OpenJTalkReSynthesis(IntPtr instance,
             string outputAudioPath)
