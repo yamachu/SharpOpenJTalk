@@ -1,5 +1,5 @@
-$latestInfo = Invoke-WebRequest -Uri https://github.com/yamachu/LibOpenJTalk/releases/latest -MaximumRedirection 0  -ErrorAction SilentlyContinue
-$Location = $latestInfo.Headers.Location
+$latestInfo = [System.Net.HttpWebRequest]::Create('https://github.com/yamachu/LibOpenJTalk/releases/latest');
+$Location = $latestInfo.GetResponse().ResponseUri.AbsoluteUri
 $Location -match ".*/tag/(?<tagName>.*?)$"
 $latestVersion = $Matches.tagName
 "$latestVersion"
