@@ -1,10 +1,8 @@
 image: Visual Studio 2017
 before_build:
-  - cmd: dotnet restore library/ref
   - cmd: dotnet restore library/src
   - ps: . .\download_resources.ps1
 build_script:
-  - dotnet build library/ref -c Release
   - dotnet build library/src -c Release
 
 after_build:

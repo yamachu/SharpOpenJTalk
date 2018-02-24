@@ -10,10 +10,4 @@
   <ItemGroup>
     <Sources Include="**/*.cs" />
   </ItemGroup>
-  <PropertyGroup>
-    <DefineConstants Condition="$(Configuration.Contains('Debug'))">$(DefineConstants);DEBUG;TRACE</DefineConstants>
-    <DefineConstants Condition="$(Configuration.Contains('Release'))">$(DefineConstants);RELEASE;TRACE</DefineConstants>
-    <Optimize Condition="$(Configuration.Contains('Debug'))">false</Optimize>
-    <Optimize Condition="$(Configuration.Contains('Release'))">true</Optimize>
-  </PropertyGroup>
 </Project>

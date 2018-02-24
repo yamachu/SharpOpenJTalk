@@ -17,11 +17,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\ref\bin\Release\**" target="ref" exclude="**\*.deps.json" />
-    <file src="..\src\bin\Release\**" target="runtimes\linux\lib" exclude="**\*.deps.json" />
-    <file src="..\src\bin\Release\**" target="runtimes\osx\lib" exclude="**\*.deps.json" />
-    <file src="..\src\bin\Release\**" target="runtimes\win-x86\lib" exclude="**\*.deps.json" />
-    <file src="..\src\bin\Release\**" target="runtimes\win-x64\lib" exclude="**\*.deps.json" />
+    <file src="..\src\bin\Release\netstandard1.3\**" target="lib/netstandatd1.3" exclude="**\*.deps.json" />
 
     <file src="..\resources/linux/libopenjtalk.so" target="runtimes/linux/native/libopenjtalk.so" />
     <file src="..\resources/osx/libopenjtalk.dylib" target="runtimes/osx/native/libopenjtalk.dylib" />
