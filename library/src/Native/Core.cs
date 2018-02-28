@@ -13,39 +13,39 @@ namespace SharpOpenJTalk.Native
 
         public static bool OpenJTalkLoad(IntPtr instance,
             string dictPath, string hmmModelPath)
-            => CoreDefinitions.Open_JTalk_load(instance, dictPath, hmmModelPath) == 1;
+            => CoreDefinitions.Open_JTalk_load_u16(instance, dictPath, hmmModelPath) == 1;
 
         public static void OpenJTalkDestroyBuffer(IntPtr instance, ref IntPtr buffer)
             => CoreDefinitions.Open_JTalk_destroy_buffer(instance, ref buffer);
 
         public static int OpenJTalkSynthesisBuffer(IntPtr instance, string text, out IntPtr buffer)
-            => CoreDefinitions.Open_JTalk_synthesis_buffer(instance, text, out buffer);
+            => CoreDefinitions.Open_JTalk_synthesis_buffer_u16(instance, text, out buffer);
 
         public static bool OpenJTalkSynthesis(IntPtr instance,
             string text, string outputAudioPath, string outputLabelPath)
-            => CoreDefinitions.Open_JTalk_synthesis(instance,
+            => CoreDefinitions.Open_JTalk_synthesis_u16(instance,
                 text, outputAudioPath, outputLabelPath) == 1;
 
         public static int OpenJTalkSynthesisBufferWORLD(IntPtr instance, string text, out IntPtr buffer)
-            => CoreDefinitions.Open_JTalk_synthesis_buffer_WORLD(instance, text, out buffer);
+            => CoreDefinitions.Open_JTalk_synthesis_buffer_WORLD_u16(instance, text, out buffer);
 
         public static bool OpenJTalkSynthesisWORLD(IntPtr instance,
             string text, string outputAudioPath, string outputLabelPath)
-            => CoreDefinitions.Open_JTalk_synthesis_WORLD(instance,
+            => CoreDefinitions.Open_JTalk_synthesis_WORLD_u16(instance,
                 text, outputAudioPath, outputLabelPath) == 1;
 
         public static bool OpenJTalkSynthesisLabels(IntPtr instance,
             string text, string outputAudioPath,
             string outputTextAnalysisPath,
             string outputContextLabelPath)
-            => CoreDefinitions.Open_JTalk_synthesis_labels(instance,
+            => CoreDefinitions.Open_JTalk_synthesis_labels_u16(instance,
                 text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
 
         public static bool OpenJTalkSynthesisLabelsWORLD(IntPtr instance,
             string text, string outputAudioPath,
             string outputTextAnalysisPath,
             string outputContextLabelPath)
-            => CoreDefinitions.Open_JTalk_synthesis_labels_WORLD(instance,
+            => CoreDefinitions.Open_JTalk_synthesis_labels_WORLD_u16(instance,
                 text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
 
         public static int OpenJTalkReSynthesisBuffer(IntPtr instance,
@@ -58,11 +58,11 @@ namespace SharpOpenJTalk.Native
 
         public static bool OpenJTalkReSynthesis(IntPtr instance,
             string outputAudioPath)
-            => CoreDefinitions.Open_JTalk_resynthesis(instance, outputAudioPath) == 1;
+            => CoreDefinitions.Open_JTalk_resynthesis_u16(instance, outputAudioPath) == 1;
 
         public static bool OpenJTalkReSynthesisWORLD(IntPtr instance,
             string outputAudioPath)
-            => CoreDefinitions.Open_JTalk_resynthesis_WORLD(instance, outputAudioPath) == 1;
+            => CoreDefinitions.Open_JTalk_resynthesis_WORLD_u16(instance, outputAudioPath) == 1;
 
         public static void OpenJTalkSetSamplingFrequency(IntPtr instance,
             IntPtr i)
