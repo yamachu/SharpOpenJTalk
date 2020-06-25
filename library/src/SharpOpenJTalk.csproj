@@ -3,7 +3,15 @@
     <TargetFramework>netstandard1.3</TargetFramework>
     <AssemblyName>SharpOpenJTalk</AssemblyName>
     <PackageId>SharpOpenJTalk</PackageId>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
   </ItemGroup>
