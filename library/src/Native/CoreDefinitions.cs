@@ -50,6 +50,10 @@ namespace SharpOpenJTalk.Native
                 string outputTextAnalysisPath,
                 string outputContextLabelPath);
 
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
+        public static extern int Open_JTalk_extract_label_u16(IntPtr openJTalkInstance,
+                string text, out IntPtr unmanagedLabels, out int labelLength);
+
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern int Open_JTalk_resynthesis_buffer(IntPtr openJTalkInstance, out IntPtr buffer);
 

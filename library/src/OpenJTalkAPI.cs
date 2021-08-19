@@ -355,6 +355,15 @@ namespace SharpOpenJTalk
             return buffer;
         }
 
+        public IEnumerable<string> GetLabels(string text)
+        {
+            if (Instance == IntPtr.Zero)
+            {
+                return null;
+            }
+            return Core.OpenJTalkExtractLabels(Instance, text);
+        }
+
         public double[] GetLF0Array()
         {
             var lf0Length = Core.OpenJTalkGetLF0Length(Instance);

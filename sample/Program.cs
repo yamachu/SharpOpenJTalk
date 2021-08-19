@@ -15,6 +15,11 @@ namespace sample
                 System.Console.WriteLine("Initialize failed");
                 return;
             }
+            var labels = instance.GetLabels("これはテストです");
+            foreach (var label in labels)
+            {
+                System.Console.WriteLine(label);
+            }
             var buffer = instance.SynthesisBuffer("これはテストです");
             if (buffer == null)
             {
