@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace SharpOpenJTalk.Native
@@ -47,6 +48,25 @@ namespace SharpOpenJTalk.Native
             string outputContextLabelPath)
             => CoreDefinitions.Open_JTalk_synthesis_labels_WORLD_u16(instance,
                 text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
+
+        public static IEnumerable<string> OpenJTalkExtractLabels(IntPtr instance, string text)
+        {
+            CoreDefinitions.Open_JTalk_extract_label_u16(instance, text, out var unmanagedLabels, out var labelsLength);
+
+            IntPtr[] tmpIntPtrArr = new IntPtr[labelsLength];
+            var labels = new List<string>();
+
+            Marshal.Copy(unmanagedLabels, tmpIntPtrArr, 0, labelsLength);
+            Marshal.FreeCoTaskMem(unmanagedLabels);
+
+            for (int i = 0; i < labelsLength; i++)
+            {
+                labels.Add(Marshal.PtrToStringAnsi(tmpIntPtrArr[i]));
+                Marshal.FreeCoTaskMem(tmpIntPtrArr[i]);
+            }
+
+            return labels;
+        }
 
         public static int OpenJTalkReSynthesisBuffer(IntPtr instance,
             out IntPtr buffer)
