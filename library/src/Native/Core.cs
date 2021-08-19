@@ -27,26 +27,11 @@ namespace SharpOpenJTalk.Native
             => CoreDefinitions.Open_JTalk_synthesis_u16(instance,
                 text, outputAudioPath, outputLabelPath) == 1;
 
-        public static int OpenJTalkSynthesisBufferWORLD(IntPtr instance, string text, out IntPtr buffer)
-            => CoreDefinitions.Open_JTalk_synthesis_buffer_WORLD_u16(instance, text, out buffer);
-
-        public static bool OpenJTalkSynthesisWORLD(IntPtr instance,
-            string text, string outputAudioPath, string outputLabelPath)
-            => CoreDefinitions.Open_JTalk_synthesis_WORLD_u16(instance,
-                text, outputAudioPath, outputLabelPath) == 1;
-
         public static bool OpenJTalkSynthesisLabels(IntPtr instance,
             string text, string outputAudioPath,
             string outputTextAnalysisPath,
             string outputContextLabelPath)
             => CoreDefinitions.Open_JTalk_synthesis_labels_u16(instance,
-                text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
-
-        public static bool OpenJTalkSynthesisLabelsWORLD(IntPtr instance,
-            string text, string outputAudioPath,
-            string outputTextAnalysisPath,
-            string outputContextLabelPath)
-            => CoreDefinitions.Open_JTalk_synthesis_labels_WORLD_u16(instance,
                 text, outputAudioPath, outputTextAnalysisPath, outputContextLabelPath) == 1;
 
         public static IEnumerable<string> OpenJTalkExtractLabels(IntPtr instance, string text)
@@ -72,17 +57,9 @@ namespace SharpOpenJTalk.Native
             out IntPtr buffer)
             => CoreDefinitions.Open_JTalk_resynthesis_buffer(instance, out buffer);
 
-        public static int OpenJTalkReSynthesisBufferWORLD(IntPtr instance,
-            out IntPtr buffer)
-            => CoreDefinitions.Open_JTalk_resynthesis_buffer_WORLD(instance, out buffer);
-
         public static bool OpenJTalkReSynthesis(IntPtr instance,
             string outputAudioPath)
             => CoreDefinitions.Open_JTalk_resynthesis_u16(instance, outputAudioPath) == 1;
-
-        public static bool OpenJTalkReSynthesisWORLD(IntPtr instance,
-            string outputAudioPath)
-            => CoreDefinitions.Open_JTalk_resynthesis_WORLD_u16(instance, outputAudioPath) == 1;
 
         public static void OpenJTalkSetSamplingFrequency(IntPtr instance,
             IntPtr i)

@@ -218,8 +218,7 @@ namespace SharpOpenJTalk
             {
                 var labelPath = Path.GetTempFileName();
                 try {
-                    synthesisSuccess = useWorld ? Core.OpenJTalkSynthesisWORLD(Instance, text, wavPath, labelPath)
-                                                : Core.OpenJTalkSynthesis(Instance, text, wavPath, labelPath);
+                    synthesisSuccess = Core.OpenJTalkSynthesis(Instance, text, wavPath, labelPath);
                 } catch (Exception ex) {
                     Console.Error.WriteLine(ex.StackTrace);
                     synthesisSuccess = false;
@@ -237,8 +236,7 @@ namespace SharpOpenJTalk
                 var textAnalysisPath = Path.GetTempFileName();
                 var contextLabelPath = Path.GetTempFileName();
                 try {
-                    synthesisSuccess = useWorld ?  Core.OpenJTalkSynthesisLabelsWORLD(Instance, text, wavPath, textAnalysisPath, contextLabelPath)
-                                                :  Core.OpenJTalkSynthesisLabels(Instance, text, wavPath, textAnalysisPath, contextLabelPath);
+                    synthesisSuccess = Core.OpenJTalkSynthesisLabels(Instance, text, wavPath, textAnalysisPath, contextLabelPath);
                 } catch (Exception ex) {
                     Console.Error.WriteLine(ex.StackTrace);
                     synthesisSuccess = false;
@@ -276,9 +274,7 @@ namespace SharpOpenJTalk
 
             try {
                 IntPtr buffer_ptr;
-                buffer_size = useWorld ? 
-                Core.OpenJTalkSynthesisBufferWORLD(Instance, text, out buffer_ptr):
-                Core.OpenJTalkSynthesisBuffer(Instance, text, out buffer_ptr);
+                buffer_size = Core.OpenJTalkSynthesisBuffer(Instance, text, out buffer_ptr);
 
                 if (buffer_size == 0) return null;
 
@@ -308,8 +304,7 @@ namespace SharpOpenJTalk
             var wavPath = Path.GetTempFileName();
 
             try {
-                synthesisSuccess = useWorld ? Core.OpenJTalkReSynthesisWORLD(Instance, wavPath)
-                                            : Core.OpenJTalkReSynthesis(Instance, wavPath);
+                synthesisSuccess = Core.OpenJTalkReSynthesis(Instance, wavPath);
             } catch (Exception ex) {
                 Console.Error.WriteLine(ex.StackTrace);
                 synthesisSuccess = false;
@@ -337,9 +332,7 @@ namespace SharpOpenJTalk
 
             try {
                 IntPtr buffer_ptr;
-                buffer_size = useWorld ? 
-                Core.OpenJTalkReSynthesisBufferWORLD(Instance, out buffer_ptr):
-                Core.OpenJTalkReSynthesisBuffer(Instance, out buffer_ptr);
+                buffer_size = Core.OpenJTalkReSynthesisBuffer(Instance, out buffer_ptr);
 
                 if (buffer_size == 0) return null;
 

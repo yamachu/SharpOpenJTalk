@@ -31,21 +31,7 @@ namespace SharpOpenJTalk.Native
                 string text, string outputAudioPath, string outputLabelPath);
 
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
-        public static extern int Open_JTalk_synthesis_buffer_WORLD_u16(IntPtr openJTalkInstance,
-                string text, out IntPtr buffer);
-
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
-        public static extern int Open_JTalk_synthesis_WORLD_u16(IntPtr openJTalkInstance,
-                string text, string outputAudioPath, string outputLabelPath);
-
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_synthesis_labels_u16(IntPtr openJTalkInstance,
-                string text, string outputAudioPath,
-                string outputTextAnalysisPath,
-                string outputContextLabelPath);
-
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
-        public static extern int Open_JTalk_synthesis_labels_WORLD_u16(IntPtr openJTalkInstance,
                 string text, string outputAudioPath,
                 string outputTextAnalysisPath,
                 string outputContextLabelPath);
@@ -57,14 +43,8 @@ namespace SharpOpenJTalk.Native
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern int Open_JTalk_resynthesis_buffer(IntPtr openJTalkInstance, out IntPtr buffer);
 
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
-        public static extern int Open_JTalk_resynthesis_buffer_WORLD(IntPtr openJTalkInstance, out IntPtr buffer);
-
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
         public static extern int Open_JTalk_resynthesis_u16(IntPtr openJTalkInstance, string outputAudioPath);
-
-        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
-        public static extern int Open_JTalk_resynthesis_WORLD_u16(IntPtr openJTalkInstance, string outputAudioPath);
 #endregion
 
 #region Parameters
