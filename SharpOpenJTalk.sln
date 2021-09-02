@@ -1,13 +1,17 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library", "library", "{56994CF4-8C61-45CD-B59E-994BCF9177B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpOpenJTalk", "library\src\SharpOpenJTalk.csproj", "{945B02FC-5347-4C01-9576-B8EC376C87D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpOpenJTalk", "library\full\src\SharpOpenJTalk.csproj", "{945B02FC-5347-4C01-9576-B8EC376C87D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sample", "sample\sample.csproj", "{313FF193-AB03-4AF4-9526-199544539B24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lang", "lang", "{AC84CDE9-72DF-4826-A89C-02AE007AA9A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpOpenJTalk.Lang", "library\lang\src\SharpOpenJTalk.Lang.csproj", "{1AC15013-4FFF-4989-B6CF-723C8B447C8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,8 +50,22 @@ Global
 		{313FF193-AB03-4AF4-9526-199544539B24}.Release|x64.Build.0 = Release|x64
 		{313FF193-AB03-4AF4-9526-199544539B24}.Release|x86.ActiveCfg = Release|x86
 		{313FF193-AB03-4AF4-9526-199544539B24}.Release|x86.Build.0 = Release|x86
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Debug|x64.Build.0 = Debug|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Debug|x86.Build.0 = Debug|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Release|x64.ActiveCfg = Release|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Release|x64.Build.0 = Release|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Release|x86.ActiveCfg = Release|Any CPU
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{945B02FC-5347-4C01-9576-B8EC376C87D4} = {56994CF4-8C61-45CD-B59E-994BCF9177B1}
+		{AC84CDE9-72DF-4826-A89C-02AE007AA9A6} = {56994CF4-8C61-45CD-B59E-994BCF9177B1}
+		{1AC15013-4FFF-4989-B6CF-723C8B447C8F} = {AC84CDE9-72DF-4826-A89C-02AE007AA9A6}
 	EndGlobalSection
 EndGlobal

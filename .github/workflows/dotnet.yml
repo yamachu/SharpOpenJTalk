@@ -14,13 +14,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore library/src
+      run: dotnet restore library/full/src ; dotnet restore library/lang/src
     - name: Restore resources
       run: . .\download_resources.ps1
     - name: Build
-      run: dotnet build library/src -c Release
+      run: dotnet build library/full/src -c Release ; dotnet build library/lang/src -c Release
     - name: Pack
-      run: nuget pack library/nuget/SharpOpenJTalk.nuspec
+      run: nuget pack library/full/nuget/SharpOpenJTalk.nuspec ; nuget pack library/lang/nuget/SharpOpenJTalk.Lang.nuspec
     - name: Release
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
