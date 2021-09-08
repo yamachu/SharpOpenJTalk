@@ -49,5 +49,10 @@ namespace SharpOpenJTalk.Lang
         {
             Clear();
         }
+
+        public static bool GenerateUserDictionary(string dictPath, string userDictCsvPath, string outputUserDictPath)
+        {
+            return Util.OpenJTalkDictGen(dictPath, userDictCsvPath, outputUserDictPath);
+        }
     }
 }

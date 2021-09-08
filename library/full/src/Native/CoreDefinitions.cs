@@ -47,6 +47,9 @@ namespace SharpOpenJTalk.Native
         public static extern int Open_JTalk_resynthesis_u16(IntPtr openJTalkInstance, string outputAudioPath);
 #endregion
 
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
+        public static extern int Open_JTalk_dict_gen_u16(string dictPath, string userCsvPath, string outputUserDictPath);
+
 #region Parameters
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
         public static extern void Open_JTalk_set_sampling_frequency(IntPtr openJTalkInstance, IntPtr i);

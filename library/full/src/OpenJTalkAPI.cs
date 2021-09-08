@@ -348,6 +348,11 @@ namespace SharpOpenJTalk
             return buffer;
         }
 
+        public static bool GenerateUserDictionary(string dictPath, string userDictCsvPath, string outputUserDictPath)
+        {
+            return Util.OpenJTalkDictGen(dictPath, userDictCsvPath, outputUserDictPath);
+        }
+
         public IEnumerable<string> GetLabels(string text)
         {
             if (Instance == IntPtr.Zero)

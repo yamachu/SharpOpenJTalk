@@ -21,5 +21,8 @@ namespace SharpOpenJTalk.Lang.Native
         public static extern int Open_JTalk_extract_label_u16(IntPtr openJTalkInstance,
                 string text, out IntPtr unmanagedLabels, out int labelLength);
 #endregion
+
+        [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
+        public static extern int Open_JTalk_dict_gen_u16(string dictPath, string userCsvPath, string outputUserDictPath);
     }
 }
