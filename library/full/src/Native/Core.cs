@@ -13,8 +13,8 @@ namespace SharpOpenJTalk.Native
             => CoreDefinitions.Open_JTalk_clear(ref instance);
 
         public static bool OpenJTalkLoad(IntPtr instance,
-            string dictPath, string hmmModelPath)
-            => CoreDefinitions.Open_JTalk_load_u16(instance, dictPath, hmmModelPath) == 1;
+            string dictPath, string hmmModelPath, string userDictPath)
+            => CoreDefinitions.Open_JTalk_load_u16(instance, dictPath, hmmModelPath, userDictPath) == 1;
 
         public static void OpenJTalkDestroyBuffer(IntPtr instance, ref IntPtr buffer)
             => CoreDefinitions.Open_JTalk_destroy_buffer(instance, ref buffer);
