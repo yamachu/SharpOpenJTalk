@@ -15,10 +15,10 @@ namespace SharpOpenJTalk.Lang
             this.Dispose();
         }
 
-        public bool Initialize(string dictPath)
+        public bool Initialize(string dictPath, string userDictPath = null)
         {
             Instance = Core.OpenJTalkInitialize();
-            var loadSuccess = Core.OpenJTalkLoad(Instance, dictPath);
+            var loadSuccess = Core.OpenJTalkLoad(Instance, dictPath, userDictPath);
             if (!loadSuccess)
             {
                 Instance = IntPtr.Zero;

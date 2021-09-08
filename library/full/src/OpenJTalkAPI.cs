@@ -188,10 +188,10 @@ namespace SharpOpenJTalk
             this.Dispose();
         }
 
-        public bool Initialize(string dictPath, string hmmModelPath)
+        public bool Initialize(string dictPath, string hmmModelPath, string userDictPath = null)
         {
             Instance = Core.OpenJTalkInitialize();
-            var loadSuccess = Core.OpenJTalkLoad(Instance, dictPath, hmmModelPath);
+            var loadSuccess = Core.OpenJTalkLoad(Instance, dictPath, hmmModelPath, userDictPath);
             if (!loadSuccess)
             {
                 Instance = IntPtr.Zero;

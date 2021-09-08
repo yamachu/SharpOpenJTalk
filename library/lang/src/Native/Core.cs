@@ -12,8 +12,8 @@ namespace SharpOpenJTalk.Lang.Native
         public static void OpenJTalkClear(IntPtr instance)
             => CoreDefinitions.Open_JTalk_clear(ref instance);
 
-        public static bool OpenJTalkLoad(IntPtr instance, string dictPath)
-            => CoreDefinitions.Open_JTalk_load_u16(instance, dictPath) == 1;
+        public static bool OpenJTalkLoad(IntPtr instance, string dictPath, string userDictPath)
+            => CoreDefinitions.Open_JTalk_load_u16(instance, dictPath, userDictPath) == 1;
 
         public static IEnumerable<string> OpenJTalkExtractLabels(IntPtr instance, string text)
         {
