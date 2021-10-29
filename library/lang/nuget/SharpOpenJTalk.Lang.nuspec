@@ -17,12 +17,14 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="SharpOpenJTalk.Lang.props" target="build\net6.0\SharpOpenJTalk.Lang.props" />
     <file src="..\src\bin\Release\netstandard1.3\SharpOpenJTalk.Lang.*" target="lib/netstandard1.3" exclude="**\*.deps.json" />
 
     <file src="..\resources/linux/libopenjtalk-lang.so" target="runtimes/linux/native/libopenjtalk-lang.so" />
     <file src="..\resources/osx/libopenjtalk-lang.dylib" target="runtimes/osx/native/libopenjtalk-lang.dylib" />
     <file src="..\resources/win-x86/openjtalk-lang.dll" target="runtimes/win-x86/native/openjtalk-lang.dll" />
     <file src="..\resources/win-x64/openjtalk-lang.dll" target="runtimes/win-x64/native/openjtalk-lang.dll" />
+    <file src="..\resources/browser-wasm/openjtalk-lang.a" target="runtimes/browser-wasm/2.0.23/openjtalk-lang.a" />
     
     <file src="..\..\..\LICENSE" target="Content" />
   </files>
