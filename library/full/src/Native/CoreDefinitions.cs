@@ -19,7 +19,7 @@ namespace SharpOpenJTalk.Native
                 string dictPath, string hmmModelPath, string userDictPath);
 
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl)]
-        public static extern int Open_JTalk_destroy_buffer(IntPtr openJTalkInstance,
+        public static extern void Open_JTalk_destroy_buffer(IntPtr openJTalkInstance,
                 ref IntPtr buffer);
 
         [DllImport(DllName,CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
