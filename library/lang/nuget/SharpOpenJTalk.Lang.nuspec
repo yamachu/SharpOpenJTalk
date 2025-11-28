@@ -15,7 +15,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="SharpOpenJTalk.Lang.props" target="build\net6.0\SharpOpenJTalk.Lang.props" />
+    <file src="SharpOpenJTalk.Lang.props" target="build\SharpOpenJTalk.Lang.props" />
     <file src="..\src\bin\Release\netstandard2.0\SharpOpenJTalk.Lang.*" target="lib/netstandard2.0" exclude="**\*.deps.json" />
 
     <file src="..\resources/linux/x64-libopenjtalk-lang.so" target="runtimes/linux-x64/native/libopenjtalk-lang.so" />
