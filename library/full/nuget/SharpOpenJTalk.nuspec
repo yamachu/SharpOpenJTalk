@@ -24,10 +24,10 @@
     <file src="..\resources/osx/arm64-libopenjtalk.dylib" target="runtimes/osx-arm64/native/libopenjtalk.dylib" />
     <file src="..\resources/win-x86/openjtalk.dll" target="runtimes/win-x86/native/openjtalk.dll" />
     <file src="..\resources/win-x64/openjtalk.dll" target="runtimes/win-x64/native/openjtalk.dll" />
-    <file src="..\resources/browser-wasm/openjtalk.a.2.0.23" target="runtimes/browser-wasm/2.0.23/openjtalk.a" />
-    <file src="..\resources/browser-wasm/openjtalk.a.3.1.12" target="runtimes/browser-wasm/3.1.12/openjtalk.a" />
-    <file src="..\resources/browser-wasm/openjtalk.a.3.1.34" target="runtimes/browser-wasm/3.1.34/openjtalk.a" />
-    <file src="..\resources/browser-wasm/openjtalk.a.3.1.56" target="runtimes/browser-wasm/3.1.56/openjtalk.a" />
+    <file src="..\resources/browser-wasm/2.0.23/openjtalk.a" target="runtimes/browser-wasm/2.0.23/openjtalk.a" />
+    <file src="..\resources/browser-wasm/3.1.12/openjtalk.a" target="runtimes/browser-wasm/3.1.12/openjtalk.a" />
+    <file src="..\resources/browser-wasm/3.1.34/openjtalk.a" target="runtimes/browser-wasm/3.1.34/openjtalk.a" />
+    <file src="..\resources/browser-wasm/3.1.56/openjtalk.a" target="runtimes/browser-wasm/3.1.56/openjtalk.a" />
     
     <file src="..\..\..\LICENSE" target="LICENSE" />
     <file src="..\..\..\README.md" target="README.md" />
