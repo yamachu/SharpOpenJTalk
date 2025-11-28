@@ -8,7 +8,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>C# wrapper for OpenJTalk</description>
     <projectUrl>https://github.com/yamachu/SharpOpenJTalk</projectUrl>
-    <licenseUrl>https://raw.githubusercontent.com/yamachu/SharpOpenJTalk/master/LICENSE</licenseUrl>
+    <license type="file">LICENSE</license>
     <dependencies>
       <group targetFramework=".NETStandard1.3">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
@@ -31,6 +31,6 @@
     <file src="..\resources/browser-wasm/openjtalk.a.3.1.34" target="runtimes/browser-wasm/3.1.34/openjtalk.a" />
     <file src="..\resources/browser-wasm/openjtalk.a.3.1.56" target="runtimes/browser-wasm/3.1.56/openjtalk.a" />
     
-    <file src="..\..\..\LICENSE" target="Content" />
+    <file src="..\..\..\LICENSE" target="LICENSE" />
   </files>
 </package>
