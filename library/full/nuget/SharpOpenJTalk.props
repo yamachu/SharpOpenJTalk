@@ -7,6 +7,6 @@
     <EmscriptenVersion Condition="'$(EmscriptenVersion)' == '' And ('$(TargetFramework)' == 'net9.0' Or '$(TargetFramework)' == 'net10.0')">3.1.56</EmscriptenVersion>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetOS)' == 'Browser'">
-    <NativeFileReference Include="$(MSBuildThisFileDirectory)..\runtimes\browser-wasm\$(EmscriptenVersion)\openjtalk.a" />
+    <NativeFileReference Include="$(MSBuildThisFileDirectory)../runtimes/browser-wasm/$(EmscriptenVersion.Trim())/openjtalk.a" />
   </ItemGroup>
 </Project>
