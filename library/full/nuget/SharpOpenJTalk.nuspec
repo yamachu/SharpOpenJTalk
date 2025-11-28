@@ -9,6 +9,7 @@
     <description>C# wrapper for OpenJTalk</description>
     <projectUrl>https://github.com/yamachu/SharpOpenJTalk</projectUrl>
     <license type="file">LICENSE</license>
+    <readme>README.md</readme>
     <dependencies>
       <group targetFramework=".NETStandard1.3">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
@@ -32,5 +33,6 @@
     <file src="..\resources/browser-wasm/openjtalk.a.3.1.56" target="runtimes/browser-wasm/3.1.56/openjtalk.a" />
     
     <file src="..\..\..\LICENSE" target="LICENSE" />
+    <file src="..\..\..\README.md" target="README.md" />
   </files>
 </package>
