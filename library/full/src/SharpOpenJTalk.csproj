@@ -11,17 +11,26 @@
     <Sources Include="**/*.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\resources\osx\libopenjtalk.dylib">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <!-- macOS -->
+    <Content Include="..\resources\osx\x64-libopenjtalk.dylib" Condition="'$(RuntimeIdentifier)' == 'osx-x64'">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\resources\linux\libopenjtalk.so">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="..\resources\osx\arm64-libopenjtalk.dylib" Condition="'$(RuntimeIdentifier)' == 'osx-arm64'">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\resources\win-x64\openjtalk.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <!-- Linux -->
+    <Content Include="..\resources\linux\x64-libopenjtalk.so" Condition="'$(RuntimeIdentifier)' == 'linux-x64'">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\resources\win-x86\openjtalk.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="..\resources\linux\arm64-libopenjtalk.so" Condition="'$(RuntimeIdentifier)' == 'linux-arm64'">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <!-- Windows -->
+    <Content Include="..\resources\win-x64\openjtalk.dll" Condition="'$(RuntimeIdentifier)' == 'win-x64'">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\resources\win-x86\openjtalk.dll" Condition="'$(RuntimeIdentifier)' == 'win-x86'">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 </Project>
