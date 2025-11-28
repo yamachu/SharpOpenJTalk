@@ -1,12 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>SharpOpenJTalk</AssemblyName>
     <PackageId>SharpOpenJTalk</PackageId>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-  </ItemGroup>
   <ItemGroup>
     <Sources Include="**/*.cs" />
   </ItemGroup>

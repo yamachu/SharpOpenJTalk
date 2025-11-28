@@ -11,15 +11,12 @@
     <license type="file">LICENSE</license>
     <readme>README.md</readme>
     <dependencies>
-      <group targetFramework=".NETStandard1.3">
-        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
-        <dependency id="System.IO.FileSystem" version="4.3.0" exclude="Build,Analyzers" />
-      </group>
+      <group targetFramework=".NETStandard2.0" />
     </dependencies>
   </metadata>
   <files>
     <file src="SharpOpenJTalk.props" target="build\net6.0\SharpOpenJTalk.props" />
-    <file src="..\src\bin\Release\netstandard1.3\SharpOpenJTalk.*" target="lib/netstandard1.3" exclude="**\*.deps.json" />
+    <file src="..\src\bin\Release\netstandard2.0\SharpOpenJTalk.*" target="lib/netstandard2.0" exclude="**\*.deps.json" />
 
     <file src="..\resources/linux/x64-libopenjtalk.so" target="runtimes/linux-x64/native/libopenjtalk.so" />
     <file src="..\resources/linux/arm64-libopenjtalk.so" target="runtimes/linux-arm64/native/libopenjtalk.so" />
