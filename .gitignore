@@ -8,4 +8,5 @@ project.lock.json
 .vscode
 library/*/resources/*/*
 !library/*/resources/*/.gitkeep
+!library/*/resources/*/*/.gitkeep
 .vs

@@ -16,10 +16,10 @@ Invoke-WebRequest "$baseUrl/arm64-libopenjtalk.so" -OutFile library\full\resourc
 # Invoke-WebRequest "$baseUrl/x86_64-linux-android-libopenjtalk.so" -OutFile library\full\resources\android\x86_64-linux-android-libopenjtalk.so
 Invoke-WebRequest "$baseUrl/x86_open_jtalk.dll" -OutFile library\full\resources\win-x86\openjtalk.dll
 Invoke-WebRequest "$baseUrl/x64_open_jtalk.dll" -OutFile library\full\resources\win-x64\openjtalk.dll
-Invoke-WebRequest "$baseUrl/wasm-libopenjtalk.a.2.0.23" -OutFile library\full\resources\browser-wasm\openjtalk.a.2.0.23
-Invoke-WebRequest "$baseUrl/wasm-libopenjtalk.a.3.1.12" -OutFile library\full\resources\browser-wasm\openjtalk.a.3.1.12
-Invoke-WebRequest "$baseUrl/wasm-libopenjtalk.a.3.1.34" -OutFile library\full\resources\browser-wasm\openjtalk.a.3.1.34
-Invoke-WebRequest "$baseUrl/wasm-libopenjtalk.a.3.1.56" -OutFile library\full\resources\browser-wasm\openjtalk.a.3.1.56
+Invoke-WebRequest "$baseUrl/wasm-libopenjtalk.a.2.0.23" -OutFile library\full\resources\browser-wasm\2.0.23\openjtalk.a
+Invoke-WebRequest "$baseUrl/wasm-libopenjtalk.a.3.1.12" -OutFile library\full\resources\browser-wasm\3.1.12\openjtalk.a
+Invoke-WebRequest "$baseUrl/wasm-libopenjtalk.a.3.1.34" -OutFile library\full\resources\browser-wasm\3.1.34\openjtalk.a
+Invoke-WebRequest "$baseUrl/wasm-libopenjtalk.a.3.1.56" -OutFile library\full\resources\browser-wasm\3.1.56\openjtalk.a
 
 # Lang
 Invoke-WebRequest "$baseUrl/x64-libopenjtalk-lang.dylib" -OutFile library\lang\resources\osx\x64-libopenjtalk-lang.dylib
@@ -32,7 +32,7 @@ Invoke-WebRequest "$baseUrl/arm64-libopenjtalk-lang.so" -OutFile library\lang\re
 # Invoke-WebRequest "$baseUrl/x86_64-linux-android-libopenjtalk-lang.so" -OutFile library\lang\resources\android\x86_64-linux-android-libopenjtalk-lang.so
 Invoke-WebRequest "$baseUrl/x86_open_jtalk_lang.dll" -OutFile library\lang\resources\win-x86\openjtalk-lang.dll
 Invoke-WebRequest "$baseUrl/x64_open_jtalk_lang.dll" -OutFile library\lang\resources\win-x64\openjtalk-lang.dll
-Invoke-WebRequest "$baseUrl/wasm-libopenjtalk-lang.a.2.0.23" -OutFile library\lang\resources\browser-wasm\openjtalk-lang.a.2.0.23
-Invoke-WebRequest "$baseUrl/wasm-libopenjtalk-lang.a.3.1.12" -OutFile library\lang\resources\browser-wasm\openjtalk-lang.a.3.1.12
-Invoke-WebRequest "$baseUrl/wasm-libopenjtalk-lang.a.3.1.34" -OutFile library\lang\resources\browser-wasm\openjtalk-lang.a.3.1.34
-Invoke-WebRequest "$baseUrl/wasm-libopenjtalk-lang.a.3.1.56" -OutFile library\lang\resources\browser-wasm\openjtalk-lang.a.3.1.56
+Invoke-WebRequest "$baseUrl/wasm-libopenjtalk-lang.a.2.0.23" -OutFile library\lang\resources\browser-wasm\2.0.23\openjtalk-lang.a
+Invoke-WebRequest "$baseUrl/wasm-libopenjtalk-lang.a.3.1.12" -OutFile library\lang\resources\browser-wasm\3.1.12\openjtalk-lang.a
+Invoke-WebRequest "$baseUrl/wasm-libopenjtalk-lang.a.3.1.34" -OutFile library\lang\resources\browser-wasm\3.1.34\openjtalk-lang.a
+Invoke-WebRequest "$baseUrl/wasm-libopenjtalk-lang.a.3.1.56" -OutFile library\lang\resources\browser-wasm\3.1.56\openjtalk-lang.a
