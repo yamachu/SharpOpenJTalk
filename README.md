@@ -14,6 +14,7 @@ When targeting WebAssembly, you can optionally specify the Emscripten version to
 | net7.0          | 3.1.12                     |
 | net8.0          | 3.1.34                     |
 | net9.0 / net10.0| 3.1.56                     |
+| net11.0         | 6.0.3                     |
 
 You can override the version by passing the property at build time:
 
