@@ -21,9 +21,3 @@ jobs:
       run: dotnet build library/full/src -c Release ; dotnet build library/lang/src -c Release
     - name: Pack
       run: nuget pack library/full/nuget/SharpOpenJTalk.nuspec ; nuget pack library/lang/nuget/SharpOpenJTalk.Lang.nuspec
-    - name: Release
-      if: startsWith(github.ref, 'refs/tags/')
-      uses: softprops/action-gh-release@v1
-      with:
-        files: SharpOpenJTalk*.nupkg
-
